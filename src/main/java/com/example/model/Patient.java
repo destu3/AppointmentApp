@@ -36,6 +36,8 @@ public class Patient
     {
         Patient patient1 = new Patient("Destiny", "Uduebholo",false);
         patient1.displayDetails();
+
+        System.out.println("It looks like this is working");
     }
     
     
