@@ -30,6 +30,8 @@ public class Patient
         return "Patient details displayed";
     }
 
+    /** This main method is only to test the method and test commiting and pushing */
+
     public static void main(String[] args)
     {
         Patient patient1 = new Patient("Destiny", "Uduebholo",false);
