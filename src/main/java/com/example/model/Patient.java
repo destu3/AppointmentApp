@@ -25,9 +25,17 @@ public class Patient
     
     public String displayDetails ()
     {
-        System.out.format("Patient Details - %s", FirstName + " " + Surname);
-        
+        System.out.format("Patient Details - %s\n", FirstName + " " + Surname);
         return "Patient details displayed";
+    }
+
+    public void getRegistrationStatus ()
+    {
+        if (Registered == true)
+        {
+            System.out.format("This patient is registered and can book appointments\n");
+        }
+        else System.out.format("Patient is not registered. Please Sign up now\n");
     }
 
     /** This main method is only to test the method and test commiting and pushing */
@@ -37,7 +45,7 @@ public class Patient
         Patient patient1 = new Patient("Destiny", "Uduebholo",false);
         patient1.displayDetails();
 
-        System.out.println("It looks like this is working");
+        patient1.getRegistrationStatus();
     }
     
     
