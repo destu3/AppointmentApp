@@ -8,6 +8,9 @@ package com.example.model;
  */
 public class Appointment
 {
+
+    //Instance variable declaration for appointment class
+
     // The treatment status for the appointment
     public String Status;
 
@@ -32,8 +35,8 @@ public class Appointment
     {
         this.Status = "Pending";
         Service = "Eye Check";
-        Time = "default";
-        Date = "default";
+        Time = "00:00";
+        Date = "Current Date";
     }
 
     /**
@@ -44,7 +47,7 @@ public class Appointment
      * @param time     decided time for appointment
      * @param date     decided date for appointment
      */
-    public Appointment(String Status ,String service, String time, String date)
+    public Appointment(String Status , String service, String time, String date)
     {
         this.Status = "Pending";
         this.Service = service;
@@ -79,11 +82,6 @@ public class Appointment
      * @return  appointment time
      */
     public String getTime () {return Time;}
-
-
-
-
-
 
 }
 

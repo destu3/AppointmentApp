@@ -53,8 +53,9 @@ public class AppointmentManager {
 
             patient.bookAppointment(appointment);
 
-            System.out.println("Appointment booked");
             patient.viewAppointments();
+
+            patient.getNumberOfAppointments();
         }
 
 

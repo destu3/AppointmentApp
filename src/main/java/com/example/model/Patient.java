@@ -8,6 +8,8 @@ package com.example.model;
  */
 public class Patient
 {
+    //Instance variable declaration for patient class
+
     // Firstname of patient
    public String FirstName;
 
@@ -49,7 +51,7 @@ public class Patient
 
    public Patient(String FirstName, String Surname, boolean Registered)
    {
-       appointments = new Appointment[max_appointments];
+       appointments = new Appointment[1000];
        NumberOfAppointments = 0;
        this.FirstName = FirstName;
        this.Surname = Surname;
@@ -58,7 +60,7 @@ public class Patient
 
    public Patient()
    {
-       appointments = new Appointment[max_appointments];
+       appointments = new Appointment[1000];
        NumberOfAppointments = 0;
        this.FirstName = "FirstName";
        this.Surname = "Surname";
@@ -81,13 +83,15 @@ public class Patient
      *
      * @return
      */
-    public void getRegistrationStatus ()
+    public boolean getRegistrationStatus ()
     {
         if (Registered == true)
         {
-            System.out.format("This patient is registered and can book appointments\n");
+            System.out.println("This patient is registered and can book appointments\n");
         }
-        else System.out.format("Patient is not registered. Please Sign up now\n");
+        else System.out.println("Patient is not registered. Please Sign up now \n");
+
+        return Registered;
     }
 
     /**
@@ -97,7 +101,7 @@ public class Patient
      */
     public int getNumberOfAppointments()
     {
-        System.out.format("Current number of appointments is: %s\n" , NumberOfAppointments);
+        System.out.format("Current number of appointments is: %d\n" , NumberOfAppointments);
         return NumberOfAppointments;
     }
 
@@ -105,7 +109,7 @@ public class Patient
      * Prints information about the account and any current appointments
      *
      */
-    public String viewAppointments()
+    public void viewAppointments()
     {
         System.out.format("Firstname: %s\nSurname: %s\n", FirstName, Surname);
 
@@ -119,24 +123,22 @@ public class Patient
                     appointment.getTime(),
                     appointment.getDate());
         }
-        return  "";
+
     }
 
     /**
      * Adds a new appointment as long as the maximum of 5 has not been reached
      *
      */
-    public String bookAppointment(Appointment newAppointment)
+    public void bookAppointment(Appointment newAppointment)
     {
-        if(NumberOfAppointments < max_appointments)
+        if(Registered == true)
         {
             appointments[NumberOfAppointments] = newAppointment;
             NumberOfAppointments++;
+            System.out.println("Appointment successfully booked\n");
         }
-
-        System.out.format("Appointment successfully booked %s\n" , newAppointment);
-        return "";
-
+        else System.out.println("You need to be registered in order to book an appointment\n");
     }
 
 
