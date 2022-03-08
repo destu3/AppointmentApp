@@ -14,6 +14,9 @@ public class Appointment
     // The treatment status for the appointment
     public String Status;
 
+    // Tye default status for appointments
+    public static String defaultStatus = "pending";
+
     // The type of service required from the user
     public String Service;
 
@@ -33,7 +36,7 @@ public class Appointment
      */
     public Appointment()
     {
-        this.Status = "Pending";
+        this.Status = defaultStatus;
         Service = "Eye Check";
         Time = "00:00";
         Date = "Current Date";

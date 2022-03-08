@@ -16,9 +16,6 @@ public class Patient
    // Array to hold appointments
    private Appointment[] appointments;
 
-   // Maximum amount of appointments
-    private final int max_appointments = 5;
-
    // The number of appointments
     public int NumberOfAppointments;
 
@@ -34,9 +31,6 @@ public class Patient
    // The patients account password
    public String Password;
 
-   // The patients unique identifier
-   public int UserID;
-
 
 
    /** Constructor STILL TO BE CODED PROPERLY, the patients firstname and surname will be the values they choose during the registration process*/
@@ -51,7 +45,7 @@ public class Patient
 
    public Patient(String FirstName, String Surname, boolean Registered)
    {
-       appointments = new Appointment[1000];
+       appointments = new Appointment[10];
        NumberOfAppointments = 0;
        this.FirstName = FirstName;
        this.Surname = Surname;
@@ -60,7 +54,7 @@ public class Patient
 
    public Patient()
    {
-       appointments = new Appointment[1000];
+       appointments = new Appointment[10];
        NumberOfAppointments = 0;
        this.FirstName = "FirstName";
        this.Surname = "Surname";
@@ -85,7 +79,7 @@ public class Patient
      */
     public boolean getRegistrationStatus ()
     {
-        if (Registered == true)
+        if (Registered)
         {
             System.out.println("This patient is registered and can book appointments\n");
         }
@@ -121,7 +115,8 @@ public class Patient
                     appointment.getStatus(),
                     appointment.getService(),
                     appointment.getTime(),
-                    appointment.getDate());
+                    appointment.getDate()
+            );
         }
 
     }
@@ -132,9 +127,9 @@ public class Patient
      */
     public void bookAppointment(Appointment newAppointment)
     {
-        if(Registered == true)
+        if(Registered)
         {
-            appointments[NumberOfAppointments] = newAppointment;
+            appointments[0] = newAppointment;
             NumberOfAppointments++;
             System.out.println("Appointment successfully booked\n");
         }

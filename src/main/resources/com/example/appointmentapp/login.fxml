@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.loginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.LoginController">
    <left>
       <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #444454;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="228.0" fitWidth="216.0" layoutX="6.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImageView" fitHeight="228.0" fitWidth="216.0" layoutX="6.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../gcuOpticiansLogo/logo.png" />
                </image>
@@ -25,30 +25,30 @@
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #444c5c;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="usernameTextField" layoutX="105.0" layoutY="119.0" prefHeight="26.0" prefWidth="173.0" promptText="Please enter username" style="-fx-background-color: #44749c;">
+            <TextField fx:id="usernameTextField" layoutX="105.0" layoutY="129.0" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #44749c;">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </TextField>
-            <Label layoutX="29.0" layoutY="123.0" text="Username" textFill="#44749c">
+            <Label layoutX="26.0" layoutY="133.0" text="Username" textFill="#44749c">
                <font>
-                  <Font name="Segoe UI Bold Italic" size="14.0" />
+                  <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="32.0" layoutY="171.0" text="Password" textFill="#44749c">
+            <Label layoutX="28.0" layoutY="181.0" text="Password" textFill="#44749c">
                <font>
-                  <Font name="Segoe UI Bold Italic" size="14.0" />
+                  <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <PasswordField fx:id="enterPasswordField" layoutX="105.0" layoutY="167.0" prefHeight="26.0" prefWidth="173.0" promptText="Please enter password" style="-fx-background-color: #44749c;" />
-            <Button fx:id="loginButton" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Login" textFill="#444454">
+            <PasswordField fx:id="enterPasswordField" layoutX="105.0" layoutY="177.0" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #44749c;" />
+            <Button fx:id="loginButton" layoutX="32.0" layoutY="281.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Login" textFill="#444454">
                <font>
-                  <Font name="Segoe UI Bold Italic" size="14.0" />
+                  <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="32.0" layoutY="315.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Cancel" textFill="#444454">
+            <Button fx:id="cancelButton" layoutX="32.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Cancel" textFill="#444454">
                <font>
-                  <Font name="Segoe UI Bold Italic" size="14.0" />
+                  <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
             <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="221.0" prefHeight="17.0" prefWidth="247.0" textFill="#ab6363">
