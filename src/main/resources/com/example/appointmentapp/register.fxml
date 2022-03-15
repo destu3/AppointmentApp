@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.RegisterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.RegisterController">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="228.0" style="-fx-background-color: #444454;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="228.0" fitWidth="216.0" layoutX="6.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImageView" fitHeight="228.0" fitWidth="216.0" layoutX="6.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../gcuOpticiansLogo/logo.png" />
                </image>
@@ -25,67 +25,61 @@
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="384.0" style="-fx-background-color: #444c5c;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="76.0" layoutY="20.0" text="Patient Registration" textFill="#44749c">
+            <Label layoutX="78.0" layoutY="35.0" text="Patient Registration" textFill="#44749c">
                <font>
                   <Font name="Segoe UI Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="145.0" layoutY="90.0" text="First Name" textFill="#44749c">
+            <Label layoutX="148.0" layoutY="90.0" text="Full Name" textFill="#44749c">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="firstnameTextField" layoutX="77.0" layoutY="109.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: #44749c;" />
-            <Label layoutX="147.0" layoutY="150.0" text="Last Name" textFill="#44749c">
+            <TextField fx:id="fullNameTextField" layoutX="85.0" layoutY="109.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #44749c;" />
+            <Label layoutX="148.0" layoutY="146.0" text="Username" textFill="#44749c">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="lastnameTextField" layoutX="77.0" layoutY="169.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: #44749c;" />
-            <Label layoutX="148.0" layoutY="209.0" text="Username" textFill="#44749c">
+            <TextField fx:id="usernameTextField" layoutX="85.0" layoutY="165.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #44749c;" />
+            <Label layoutX="150.0" layoutY="204.0" text="Password" textFill="#44749c">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="usernameTextField" layoutX="77.0" layoutY="228.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: #44749c;" />
-            <Label layoutX="153.0" layoutY="264.0" text="Password" textFill="#44749c">
+            <PasswordField fx:id="enterPasswordField" layoutX="85.0" layoutY="223.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #44749c;" />
+            <Label layoutX="122.0" layoutY="259.0" text="Confirm Password" textFill="#44749c">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Label>
-            <PasswordField fx:id="enterPasswordField" layoutX="74.0" layoutY="283.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: #44749c;" />
-            <Label layoutX="121.0" layoutY="324.0" text="Confirm Password" textFill="#44749c">
-               <font>
-                  <Font name="Segoe UI Bold" size="16.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="confirmPasswordField" layoutX="76.0" layoutY="343.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: #44749c;" />
-            <Button fx:id="registerButton" layoutX="10.0" layoutY="465.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="32.0" prefWidth="353.0" style="-fx-background-color: #44749c;" text="Register" textFill="#444454">
+            <PasswordField fx:id="confirmPasswordField" layoutX="86.0" layoutY="278.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #44749c;" />
+            <Button fx:id="registerButton" layoutX="63.0" layoutY="343.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Register" textFill="#444454">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="loginButton" layoutX="10.0" layoutY="510.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="352.0" style="-fx-background-color: #44749c;" text="Log In" textFill="#444454">
+            <Button fx:id="loginButton" layoutX="63.0" layoutY="393.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Log In" textFill="#444454">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="closeButton" layoutX="10.0" layoutY="555.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="353.0" style="-fx-background-color: #44749c;" text="Close" textFill="#444454">
+            <Button fx:id="closeButton" layoutX="63.0" layoutY="443.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="247.0" style="-fx-background-color: #44749c;" text="Close" textFill="#444454">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="registerMessageLabel" contentDisplay="CENTER" layoutX="98.0" layoutY="400.0" textFill="#9a5f5f">
+            <Label fx:id="registerMessageLabel" contentDisplay="CENTER" layoutX="132.0" layoutY="312.0" textFill="#9a5f5f">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="unmatchingPasswordsMessageLabel" contentDisplay="CENTER" layoutX="104.0" layoutY="425.0" textFill="#9a5f5f">
+            <Label fx:id="unmatchingPasswordsMessageLabel" contentDisplay="CENTER" layoutX="100.0" layoutY="312.0" textFill="#9a5f5f">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="successfulRegistrationMessageLabel" contentDisplay="CENTER" layoutX="53.0" layoutY="400.0" textFill="#7e995f">
+            <Label fx:id="successfulRegistrationMessageLabel" contentDisplay="CENTER" layoutX="46.0" layoutY="312.0" textFill="#7e995f">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

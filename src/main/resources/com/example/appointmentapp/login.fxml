@@ -51,7 +51,7 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="221.0" prefHeight="17.0" prefWidth="247.0" textFill="#ab6363">
+            <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="234.0" prefHeight="17.0" prefWidth="247.0" textFill="#ab6363">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

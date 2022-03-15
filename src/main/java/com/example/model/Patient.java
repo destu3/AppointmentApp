@@ -45,7 +45,7 @@ public class Patient
 
    public Patient(String FirstName, String Surname, boolean Registered)
    {
-       appointments = new Appointment[10];
+       appointments = new Appointment[5];
        NumberOfAppointments = 0;
        this.FirstName = FirstName;
        this.Surname = Surname;
@@ -54,14 +54,38 @@ public class Patient
 
    public Patient()
    {
-       appointments = new Appointment[10];
+       appointments = new Appointment[5];
        NumberOfAppointments = 0;
        this.FirstName = "FirstName";
        this.Surname = "Surname";
        this.Registered = false;
    }
 
-   /**
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public Appointment[] getAppointments() {
+        return appointments;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public boolean isRegistered() {
+        return Registered;
+    }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    /**
      * Displays the patients details
      *
      * @return Firstname and Surname
@@ -98,60 +122,6 @@ public class Patient
         System.out.format("Current number of appointments is: %d\n" , NumberOfAppointments);
         return NumberOfAppointments;
     }
-
-    /**
-     * Prints information about the account and any current appointments
-     *
-     */
-    public void viewAppointments()
-    {
-        System.out.format("Firstname: %s\nSurname: %s\n", FirstName, Surname);
-
-        for(int i=0;i<NumberOfAppointments;i++)
-        {
-            Appointment appointment = appointments[i];
-
-            System.out.format("%s   %s    %s    %s\n",
-                    appointment.getStatus(),
-                    appointment.getService(),
-                    appointment.getTime(),
-                    appointment.getDate()
-            );
-        }
-
-    }
-
-    /**
-     * Adds a new appointment as long as the maximum of 5 has not been reached
-     *
-     */
-    public void bookAppointment(Appointment newAppointment)
-    {
-        if(Registered)
-        {
-            appointments[0] = newAppointment;
-            NumberOfAppointments++;
-            System.out.println("Appointment successfully booked\n");
-        }
-        else System.out.println("You need to be registered in order to book an appointment\n");
-    }
-
-
-
-    /** Registration code will go in here */
-    public void Register ()
-    {
-
-
-    }
-
-    /** Login code will go in here */
-    public void Login ()
-    {
-
-
-    }
-
 
 }
    

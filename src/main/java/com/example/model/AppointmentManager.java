@@ -51,9 +51,7 @@ public class AppointmentManager {
             Appointment appointment = new Appointment(treatmentStatus, desiredService, preferredTime, desiredDate);
             Patient patient = new Patient(firstName,surName,true);
 
-            patient.bookAppointment(appointment);
 
-            patient.viewAppointments();
 
             patient.getNumberOfAppointments();
         }
@@ -62,9 +60,6 @@ public class AppointmentManager {
     public static void main(String[] args) {
         Patient patient = new Patient();
 
-        AppointmentManager appointmentManager = new AppointmentManager(patient);
-
-        appointmentManager.Begin();
 
     }
 }
