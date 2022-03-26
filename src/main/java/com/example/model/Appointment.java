@@ -8,38 +8,40 @@ package com.example.model;
  */
 public class Appointment
 {
-
-    //Instance variable declaration for appointment class
-
     // The treatment status for the appointment
-    public String Status;
+    private String Status;
 
     // Tye default status for appointments
-    public static String defaultStatus = "pending";
+    public static final String defaultStatus = "pending";
 
     // The type of service required from the user
-    public String Service;
+    private String Service;
 
     // The time od the appointment
-    public String Time;
+    private String Time;
 
     // The date for the appointment
-    public String Date;
+    private String Date;
 
     // The optician for the appointment
-    public Optician optician;
+    private Optician optician;
+
+    // The patient for the appointment
+    private Patient patient;
+
 
 
     /**
      * Constructor for Appointment Objects
      *
      */
-    public Appointment()
-    {
+    public Appointment() {
         this.Status = defaultStatus;
-        Service = "Eye Check";
-        Time = "00:00";
-        Date = "Current Date";
+        this.Service = "";
+        this.Time = "";
+        this.Date = "";
+        this.patient = null;
+        this.optician = null;
     }
 
     /**
@@ -50,41 +52,79 @@ public class Appointment
      * @param time     decided time for appointment
      * @param date     decided date for appointment
      */
-    public Appointment(String Status , String service, String time, String date)
+    public Appointment(Patient patient, Optician optician, String Status,String service, String time, String date)
     {
-        this.Status = "Pending";
+        this.Status = defaultStatus;
         this.Service = service;
         this.Time = time;
         this.Date = date;
+        this.patient = patient;
+        this.optician = optician;
+
     }
 
-    /**
-     * returns the treatment status
-     *
-     * @return  the status
-     */
-    public String getStatus() {return Status;}
+    public String getStatus() {
+        return Status;
+    }
 
-    /**
-     * returns the Service
-     *
-     * @return  service
-     */
-    public String getService () {return Service;}
+    public String getService() {
+        return Service;
+    }
 
-    /**
-     * returns the appointment date
-     *
-     * @return  appointment date
-     */
-    public String getDate () {return Date;}
+    public String getTime() {
+        return Time;
+    }
 
-    /**
-     * returns the appointment time
-     *
-     * @return  appointment time
-     */
-    public String getTime () {return Time;}
+    public String getDate() {
+        return Date;
+    }
+
+    public Optician getOptician() {
+        return optician;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    public void setService(String service) {
+        Service = service;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public void setOptician(Optician optician) {
+        this.optician = optician;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "Status='" + Status + '\'' +
+                ", Service='" + Service + '\'' +
+                ", Time='" + Time + '\'' +
+                ", Date='" + Date + '\'' +
+                ", optician=" + optician +
+                ", patient=" + patient +
+                '}';
+    }
+
 
 }
 

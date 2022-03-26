@@ -1,6 +1,9 @@
 package com.example.appointmentapp;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.util.ResourceBundle;
@@ -22,6 +26,8 @@ public class LoginController implements Initializable {
     //Fields for LoginController class.
     public Button loginButton;
     @FXML
+    private Button registerButton;
+    @FXML
     private Button cancelButton;
     @FXML
     private Label loginMessageLabel;
@@ -32,8 +38,11 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField enterPasswordField;
 
-    private static Scanner scanner;
-    private static Scanner Scanner;
+    private Scanner scanner;
+    private Scanner Scanner;
+    private String patientsFullName;
+    private String patientsUsername;
+    private String patientsPassword;
 
     //logos are created and displayed.
     @Override
@@ -67,8 +76,8 @@ public class LoginController implements Initializable {
     //method for verifying login.
     public void verifyLogin(String username, String Password, String filepath)
     {
-        boolean found = false;
         String searchTerm = usernameTextField.getText();
+        boolean found = false;
 
         //The scanner object checks the database (accounts.csv) to see if it can find any data that matches the patients inputted username and password.
         try
@@ -82,15 +91,27 @@ public class LoginController implements Initializable {
                 String tempPassword = scanner.next();
                 String tempFullName = scanner.next();
 
-                if (tempUsername.trim().equals(username.trim()) && tempPassword.trim().equals(Password.trim()))
-                {
+                if (tempUsername.trim().equals(username.trim()) && tempPassword.trim().equals(Password.trim())) {
                     found = true;
-                    loginMessageLabel.setText("You are logged in :)");
 
                     readPatient(searchTerm, filepath);
 
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AppointmentView.fxml"));
+                    Parent root = loader.load();
+
+                    AppointmentViewController appointmentViewController = loader.getController();
+                    appointmentViewController.getPatientDetails(patientsFullName,patientsUsername,patientsPassword);
+
+                    Stage stage = new Stage();
+                    stage.initStyle(StageStyle.UNDECORATED);
+                    stage.setScene(new Scene(root, 990,728));
+                    stage.show();
+
+                    Stage loginStage = (Stage) loginButton.getScene().getWindow();
+                    loginStage.close();
                 }
-                else {
+                else
+                {
                     loginMessageLabel.setText("User not found. Register now");
                 }
             }
@@ -102,7 +123,7 @@ public class LoginController implements Initializable {
     }
 
     //Method that retrieves the patients details from the database (accounts.csv) based on the inputted username
-    public static void readPatient(String searchTerm, String filepath){
+    public void readPatient(String searchTerm, String filepath){
 
         boolean Found = false;
 
@@ -119,12 +140,13 @@ public class LoginController implements Initializable {
                 String Password = Scanner.next();
                 String FullName = Scanner.next();
 
+                patientsFullName = FullName;
+                patientsUsername = Username;
+                patientsPassword = Password;
+
                 if(Username.equals(searchTerm))
                 {
                     Found = true;
-                }
-
-                if (Found){
                     System.out.println("full name:" + FullName);
                     System.out.println("username:" + Username);
                     System.out.println("password:" + Password);
@@ -142,5 +164,23 @@ public class LoginController implements Initializable {
     {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    //Method for when the Register button is clicked. Register window is displayed.
+    public void registerButtonOnAction(ActionEvent event)
+    {
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("register.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            registerStage.setScene(new Scene(fxmlLoader.load(), 600, 517));
+            registerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }

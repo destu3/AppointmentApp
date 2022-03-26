@@ -1,8 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.AppointmentViewController">
-
+<AnchorPane prefHeight="728.0" prefWidth="990.0" style="-fx-background-color: #9E9E9E;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appointmentapp.AppointmentViewController">
+   <children>
+      <TableView fx:id="tvAppointmentsDeatils" layoutX="294.0" layoutY="91.0" prefHeight="394.0" prefWidth="636.0" style="-fx-background-color: #BDBDBD;">
+        <columns>
+          <TableColumn fx:id="tcStatus" prefWidth="149.0" text="Status" />
+          <TableColumn fx:id="tcService" editable="false" prefWidth="162.0" text="Service" />
+            <TableColumn fx:id="tcDate" prefWidth="158.0" text="Date" />
+            <TableColumn fx:id="tcTime" prefWidth="165.0" text="Time" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Accordion layoutX="406.0" layoutY="21.0" />
+    <TitledPane animated="false" layoutX="59.0" layoutY="288.0" style="-fx-background-color: #BDBDBD;" text="Optician details">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="220.0" style="-fx-background-color: #BDBDBD;">
+               <children>
+                  <Text fill="#212121" layoutX="8.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You will treated by Dr Smith or Dr Patterson upon arrival" wrappingWidth="188.13671875">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font></Text>
+                  <Label fx:id="opticiansName1" layoutX="8.0" layoutY="118.0" text="Label" textFill="#212121">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="opticiansSpeciality1" layoutX="8.0" layoutY="137.0" text="Label" textFill="#212121">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="opticiansName" layoutX="8.0" layoutY="67.0" text="Label" textFill="#212121">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opticiansSpeciality" layoutX="8.0" layoutY="86.0" text="Label" textFill="#212121">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+      </content>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+    </TitledPane>
+      <TextField fx:id="serviceInput" layoutX="373.0" layoutY="582.0" style="-fx-background-color: #BDBDBD;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="dateInput" layoutX="565.0" layoutY="582.0" style="-fx-background-color: #BDBDBD;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="timeInput" layoutX="767.0" layoutY="582.0" style="-fx-background-color: #BDBDBD;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></TextField>
+      <Button fx:id="bookButton" layoutX="764.0" layoutY="619.0" mnemonicParsing="false" onAction="#bookAppointment" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #BDBDBD;" text="Book New Appointment" textFill="#212121">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></Button>
+      <TitledPane animated="false" collapsible="false" layoutX="59.0" layoutY="91.0" style="-fx-background-color: #BDBDBD;" text="Patient Details" textFill="#212121">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="220.0" style="-fx-background-color: #BDBDBD;">
+               <children>
+                  <Label fx:id="patientsName" layoutX="14.0" layoutY="34.0" text="Label" textFill="#212121">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="14.0" layoutY="14.0" text="Welcome back :&gt;" textFill="#212121">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font>
+      </TitledPane>
+      <Button fx:id="cancelAppointment" layoutX="373.0" layoutY="619.0" mnemonicParsing="false" onAction="#cancelAppointment" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #BDBDBD;" text="Cancel Appointment" textFill="#212121">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="396.0" layoutY="553.0" text="Required Service" textFill="#212121">
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="543.0" layoutY="553.0" text="Appointment Date (dd/mm/yy)" textFill="#212121">
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="760.0" layoutY="553.0" text="Appointment Time (24:00)" textFill="#212121">
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="50.0" text="Appointments and details" textAlignment="JUSTIFY" textFill="#212121">
+         <font>
+            <Font name="Segoe UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoImageView" fitHeight="90.0" fitWidth="84.0" layoutX="852.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../gcuOpticiansLogo/logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="527.0" text="Book New Appointment" textAlignment="JUSTIFY" textFill="#212121">
+         <font>
+            <Font name="Segoe UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="43.0" layoutY="491.0" prefHeight="53.0" prefWidth="908.0" />
+      <Separator layoutX="40.0" layoutY="19.0" orientation="VERTICAL" prefHeight="485.0" prefWidth="6.0" />
+      <Separator layoutX="948.0" layoutY="19.0" orientation="VERTICAL" prefHeight="485.0" prefWidth="6.0" />
+      <Separator layoutX="40.0" layoutY="529.0" orientation="VERTICAL" prefHeight="158.0" prefWidth="6.0" />
+      <Separator layoutX="948.0" layoutY="528.0" orientation="VERTICAL" prefHeight="158.0" prefWidth="6.0" />
+      <Separator layoutX="348.0" layoutY="529.0" orientation="VERTICAL" prefHeight="158.0" prefWidth="6.0" />
+      <ImageView fx:id="appointmentLogoView" fitHeight="116.0" fitWidth="180.0" layoutX="108.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../gcuOpticiansLogo/appointmentlogo.png" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </AnchorPane>

@@ -109,4 +109,10 @@ public class RegisterController implements Initializable {
         }
 
     }
+
+    public void closeButtonOnAction (ActionEvent event)
+    {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+    }
 }
